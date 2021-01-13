@@ -1,5 +1,7 @@
 // ITERATION 1
 
+// 'Find a random element of the array - selectRandom'
+
 
 
 
@@ -153,14 +155,44 @@ const roomsArray = [
         }
     ];
 
-// 'Find a random element of the array - selectRandom'
+// ITERATION 2
+
 
 function selectRandom(array) {
-    return array[Math.floor(Math.random() + array.lenght)];
+    return array[Math.floor(Math.random() * array.length)];
+};
+
+function pickMystery() {
+    const mystery =  {
+        suspect: null,
+        room: null,
+        weapon: null  
+    }
+
+    const pickSuspect = () => {
+        mystery.suspect = selectRandom(suspectsArray);
+    }
+    const pickRoom = () => {
+        mystery.room = selectRandom(roomsArray);
+    }
+    const pickWeapon = () => {
+        mystery.weapon = selectRandom(weaponsArray);
+    }
+
+    return mystery
 };
 
 
+const revealMystery = (object) => {
+  let enveloppe = pickMystery();  
+  let mysterySolved = `${envelope.suspect.firstName} ${envelope.suspect.lastName} killed Mr. Boddy using the ${envelope.weapon.name} in the ${envelope.room.name}!`;
+    
+  return mysterySolved;
+};
+ 
+revealMystery()
 
-// ITERATION 2
+
+
 
 // ITERATION 3
